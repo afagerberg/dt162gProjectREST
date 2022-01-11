@@ -19,10 +19,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 //(om det ska användass) use och joina public-katalog
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
 
 // Använd dreamtopics
-app.use('/dreamTopics', dreamtopics);
+app.use('/dreamtopics', dreamtopics);
 
 
 app.get('/', (req, res) => {
