@@ -8,9 +8,13 @@ const path = require('path');
 const cors = require('cors');
 app.use(cors({
     origin: '*',
-    methods: ['GET','POST','DELETE','PUT','PATCH']
+    methods: ['GET','POST','DELETE','PUT','PATCH'],
+    credentials: true,
+    allowedHeaders: ['Overwrite', 'Destination', 'Content-Type', 'Depth', 'User-Agent', 'Translate', 'Range', 'Content-Range', 'Timeout', 'X-File-Size', 'X-Requested-With', 'If-Modified-Since', 'X-File-Name', 'Cache-Control', 'Location', 'Lock-Token', 'If'],
+    exposedHeaders:['DAV', 'content-length', 'Allow']
 }));
 
+//Vägen till dreamtopics
 const dreamtopics = require('./routes/dreamTopics');
 
 
