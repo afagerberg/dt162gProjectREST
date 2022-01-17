@@ -82,7 +82,7 @@ router.get('/', function(req, res, next) {
   });
   
   //Lägg till ny dreamtopic
-  router.post('/', function(req, res, next) {
+  router.post('/',  async function(req, res, next) {
 
 	  // Skapa ny dreamtopic
 	  const dtopic = new Dreamtopic({ 
@@ -93,7 +93,7 @@ router.get('/', function(req, res, next) {
 	  });	
   
 	  // Spara ny dreamtopic till db
-	  dtopic.save(function(err) {
+	  await dtopic.save(function(err) {
 		  if(err) return console.error(err);
 	  });
   
